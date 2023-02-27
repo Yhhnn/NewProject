@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import './App.css';
+import "./App.css";
+import { Link } from "react-router-dom";
+
 
 function App() {
   const [parks, setParks] = useState([]);
@@ -18,10 +20,15 @@ function App() {
       <div className="park-cards">
         {parks.map((park) => (
           <div key={park.id} className="park-card">
-            <img src={park.images[0].url} alt={park.fullName} />
-            <h3>{park.fullName}</h3>
+            <Link to={`/park/${park.id}`}>
+              <img src={park.images[0].url} alt={park.fullName} />
+              <h3>{park.fullName}</h3>
+            </Link>
             <p>{park.description}</p>
-            <button onClick={() => alert(`You clicked ${park.fullName}`)}>
+            <button onClick={() => {
+             console.log(`Location of ${park.fullName}:`, park.latLong);
+             alert(`You clicked ${park.fullName}`);
+             }}>
               Click me
             </button>
           </div>
