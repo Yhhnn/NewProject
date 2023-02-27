@@ -22,7 +22,7 @@ function App() {
             <h3>{park.fullName}</h3>
             <p>{park.description}</p>
             <button onClick={() => alert(`You clicked ${park.fullName}`)}>
-              You should get to know more
+              Click me
             </button>
           </div>
         ))}
