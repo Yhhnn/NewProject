@@ -19,11 +19,11 @@ function Router() {
       <Route exact path="/">
         <App />
       </Route>
-      <Route path="/park/:id">
-        <ParkPage parks={parks} />
+      <Route path="/park/:id/actividades">
+       <ParkPage parks={parks} />
       </Route>
-    </Routes>
-  );
-}
+      </Routes>
+      );
+     }
 
 export default Router;

@@ -2,10 +2,10 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 function ParkPage({ parks }) {
-  const { id } = useParams();
-  const park = parks.find((park) => park.id === id);
+  const { id: parkId } = useParams();
+  const activityName = park.activities[0].name;
+console.log(`Actividad en ${park.fullName}: ${activityName}`);
 
-  console.log(`Location of ${park.fullName}:`, park.latLong);
 
   return (
     <div>
