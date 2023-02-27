@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import App from "./App";
 import ParkPage from "./ParkPage";
 
@@ -15,14 +15,14 @@ function Router() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <Routes>
       <Route exact path="/">
         <App />
       </Route>
       <Route path="/park/:id">
         <ParkPage parks={parks} />
       </Route>
-    </BrowserRouter>
+    </Routes>
   );
 }
 
