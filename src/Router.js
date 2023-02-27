@@ -1,12 +1,7 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import App from "./App";
-import ParkPage from "./ParkPage";
-
 function Router() {
-  const [parks, setParks] = React.useState([]);
+  const [parks, setParks] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetch(
       "https://developer.nps.gov/api/v1/parks?fields=images&api_key=Gzi5YUD266c1PzJqT3jv0y1exjey9Wd7HL9uCRi8"
     )
@@ -15,15 +10,18 @@ function Router() {
   }, []);
 
   return (
-    <Routes>
-      <Route exact path="/">
-        <App />
-      </Route>
-      <Route path="/park/:id/actividades">
-       <ParkPage parks={parks} />
-      </Route>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/">
+          <App />
+        </Route>
+        <Route path="/park/:id">
+          <ParkPage parks={parks} />
+        </Route>
+        <Route path="/park/:id/activities">
+          <h1>Activities</h1>
+        </Route>
       </Routes>
-      );
-     }
-
-export default Router;
+    </BrowserRouter>
+  );
+}
