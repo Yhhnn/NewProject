@@ -50,7 +50,7 @@
   }
   
   button {
-    background-color: #007bff;
+    background-color: hsl(319, 100%, 50%);
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -60,6 +60,6 @@
   }
   
   button:hover {
-    background-color: #0069d9;
+    background-color: hsl(175, 88%, 50%);
   }
   
